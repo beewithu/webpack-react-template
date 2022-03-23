@@ -3,7 +3,7 @@ const { merge } = require('webpack-merge');
 
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'eval-source-map',
+  devtool: 'inline-source-map',
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {

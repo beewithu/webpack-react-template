@@ -1,10 +1,13 @@
-import Header from 'components/Header';
+import Text from 'components/Text';
+import { FC, ReactElement } from 'react';
 
-const App = () => {
+const App: FC = (): ReactElement => {
   return (
     <div>
-      <Header />
-      <p>Webpack 5 + React (hot module reload incl.)</p>
+      <Text variant="title" type="primary">
+        Webpack 5 + React
+      </Text>
+      <Text variant="subtitle" type="secondary">(hot module reload incl.)</Text>
     </div>
   );
 };
