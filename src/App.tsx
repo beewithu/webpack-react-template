@@ -1,15 +1,17 @@
-import Text from 'components/Text';
-import { FC, ReactElement } from 'react';
+import AppRoutes from 'pages';
+import { ChangeEvent, FC, ReactElement } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Dispatch, RootState } from 'store';
 
 const App: FC = (): ReactElement => {
-  return (
-    <div>
-      <Text variant="title" type="primary">
-        Webpack 5 + React
-      </Text>
-      <Text variant="subtitle" type="secondary">(hot module reload incl.)</Text>
-    </div>
-  );
+  const dispatch = useDispatch<Dispatch>();
+  const webpackVersion = useSelector<RootState, string>((state) => state.app.webpackVersion);
+
+  const onWebpackVersionChange = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch.app.setWebpackVersion(event.target.value);
+  };
+
+  return <AppRoutes />;
 };
 
 export default App;

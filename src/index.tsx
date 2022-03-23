@@ -1,10 +1,23 @@
+import { StrictMode } from 'react';
 import { render } from 'react-dom';
 import { hot } from 'react-hot-loader/root';
-import { globalStyles } from './custom-stitches';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import { globalStyles } from './custom-stitches';
+import store from './store';
 
 const HotModuleApp = hot(App);
 
 globalStyles();
 
-render(<HotModuleApp />, document.getElementById('root'));
+render(
+  <StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <HotModuleApp />
+      </BrowserRouter>
+    </Provider>
+  </StrictMode>,
+  document.getElementById('root'),
+);

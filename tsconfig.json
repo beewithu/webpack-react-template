@@ -19,7 +19,9 @@
     "baseUrl": "src",
     "paths": {
       "components/*": ["components/*"],
-      "custom-stitches/*": ["custom-stitches/*"]
+      "custom-stitches/*": ["custom-stitches/*"],
+      "store/*": ["store/*"],
+      "pages/*": ["pages/*"]
     }
   },
   "include": ["src", "src/custom.d.ts"]
