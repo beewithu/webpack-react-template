@@ -12,7 +12,6 @@ export const features: Feature[] = [
   {
     name: 'Feature Card #1',
     isStar: true,
-    imgSrc: 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/7b13ad77495861.5c8936f77b23c.png',
     overlayColor: blue.blue4,
   },
   {
