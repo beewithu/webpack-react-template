@@ -8,6 +8,7 @@ const AppRoutes: FC = (): ReactElement => {
     <Routes>
       <Route
         path="/"
+        caseSensitive
         element={
           <Suspense fallback={<div />}>
             <Home />
