@@ -1,9 +1,8 @@
-import { blue, cyan, green, purple, yellow } from '@radix-ui/colors';
+import FeatureCard from 'components/FeatureCard';
 import Text from 'components/Text';
 import { styled } from 'custom-stitches';
 import MainLayout from 'layouts/Main';
 import { FC, ReactElement } from 'react';
-import FeatureCard from './components/FeatureCard';
 import { features } from './helpers';
 
 const Container = styled('div', {
@@ -28,7 +27,9 @@ const Home: FC = (): ReactElement => {
       <Container>
         {features.map((feature) => (
           <FeatureCard
+            key={feature.key}
             title={feature.name}
+            path={feature.path}
             isStar={feature.isStar}
             imgSrc={feature.imgSrc}
             backgroundColor={feature.backgroundColor}

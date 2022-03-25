@@ -7,4 +7,5 @@ module.exports = {
   store: path.resolve(__dirname, '../src/store'),
   pages: path.resolve(__dirname, '../src/pages'),
   layouts: path.resolve(__dirname, '../src/layouts'),
+  hooks: path.resolve(__dirname, '../src/hooks'),
 };
