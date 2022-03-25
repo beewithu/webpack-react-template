@@ -6,4 +6,5 @@ module.exports = {
   'custom-stitches': path.resolve(__dirname, '../src/custom-stitches'),
   store: path.resolve(__dirname, '../src/store'),
   pages: path.resolve(__dirname, '../src/pages'),
+  layouts: path.resolve(__dirname, '../src/layouts'),
 };

@@ -21,7 +21,8 @@
       "components/*": ["components/*"],
       "custom-stitches/*": ["custom-stitches/*"],
       "store/*": ["store/*"],
-      "pages/*": ["pages/*"]
+      "pages/*": ["pages/*"],
+      "layouts/*": ["layouts/*"]
     }
   },
   "include": ["src", "src/custom.d.ts"]

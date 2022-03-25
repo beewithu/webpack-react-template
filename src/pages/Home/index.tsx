@@ -1,27 +1,42 @@
-import Input from 'components/Input';
+import { blue, cyan, green, purple, yellow } from '@radix-ui/colors';
 import Text from 'components/Text';
-import { ChangeEvent, FC, ReactElement } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Dispatch, RootState } from 'store';
+import { styled } from 'custom-stitches';
+import MainLayout from 'layouts/Main';
+import { FC, ReactElement } from 'react';
+import FeatureCard from './components/FeatureCard';
+import { features } from './helpers';
+
+const Container = styled('div', {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, 420px)',
+  gridGap: '18px',
+  justifyContent: 'center',
+});
 
 const Home: FC = (): ReactElement => {
-  const dispatch = useDispatch<Dispatch>();
-  const webpackVersion = useSelector<RootState, string>((state) => state.app.webpackVersion);
-
-  const onWebpackVersionChange = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch.app.setWebpackVersion(event.target.value);
-  };
-
   return (
-    <div>
-      <Text variant="title" type="primary">
-        Webpack {webpackVersion} + React
+    <MainLayout>
+      <Text
+        css={{
+          textAlign: 'center',
+          fontWeight: 600,
+          fontSize: 32,
+        }}
+      >
+        Sandbox's Features
       </Text>
-      <Text variant="subtitle" type="secondary">
-        (hot module reload incl.)
-      </Text>
-      <Input type="text" value={webpackVersion} onChange={onWebpackVersionChange} />
-    </div>
+      <Container>
+        {features.map((feature) => (
+          <FeatureCard
+            title={feature.name}
+            isStar={feature.isStar}
+            imgSrc={feature.imgSrc}
+            backgroundColor={feature.backgroundColor}
+            overlayColor={feature.overlayColor}
+          />
+        ))}
+      </Container>
+    </MainLayout>
   );
 };
 

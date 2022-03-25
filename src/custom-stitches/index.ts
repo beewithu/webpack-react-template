@@ -1,5 +1,5 @@
 import { createStitches } from '@stitches/react';
-import { gray, blue, red, green, blackA } from '@radix-ui/colors';
+import { gray, blue, red, green, blackA, purple, whiteA } from '@radix-ui/colors';
 
 const { styled, globalCss } = createStitches({
   theme: {
@@ -8,10 +8,12 @@ const { styled, globalCss } = createStitches({
     },
     colors: {
       ...blackA,
+      ...whiteA,
       ...gray,
       ...blue,
       ...red,
       ...green,
+      ...purple,
     },
   },
 });
