@@ -1,6 +1,6 @@
 import { styled } from 'custom-stitches';
 
-const Main = styled('div', {
+const Main = styled('main', {
   minHeight: '100vh',
 });
 

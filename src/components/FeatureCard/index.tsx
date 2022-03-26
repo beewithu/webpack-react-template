@@ -34,6 +34,7 @@ const Title = styled('span', {
   position: 'absolute',
   bottom: 0,
   left: 20,
+  right: 20,
   display: 'flex',
   gap: 5,
   justifyContent: 'flex-start',
@@ -45,8 +46,7 @@ const Overlay = styled('div', {
   top: 0,
   left: 0,
   right: 0,
-  width: 420,
-  height: 300,
+  bottom: 0,
   borderRadius: 8,
   background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 81.25%)',
 });
@@ -87,7 +87,10 @@ const FeatureCard: FC<Props> = ({
         }}
       />
       <Title>
-        <Text variant="heading" css={{ color: titleColor }}>
+        <Text
+          variant="heading"
+          css={{ color: titleColor, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
+        >
           {title}
         </Text>
         {isStar ? <StarFilledIcon /> : <StarIcon />}

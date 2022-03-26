@@ -1,6 +1,6 @@
 import { styled } from 'custom-stitches';
 
-const ComponentDemo = styled('div', {
+const ComponentDemo = styled('main', {
   minHeight: '100vh',
   display: 'grid',
   gridTemplateAreas: `"component-demo controller"`,
