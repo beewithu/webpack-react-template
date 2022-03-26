@@ -8,6 +8,7 @@ export type Feature = {
   isStar?: boolean;
   backgroundColor?: string;
   overlayColor?: string;
+  titleColor?: string;
 };
 
 const COMPONENTS_PATH = 'components';
@@ -23,6 +24,7 @@ export const features: Feature[] = [
     path: getPath('feature-card'),
     isStar: true,
     overlayColor: blue.blue4,
+    titleColor: '#000',
   },
   {
     key: 'carousel',
@@ -31,6 +33,7 @@ export const features: Feature[] = [
     isStar: true,
     backgroundColor: purple.purple6,
     overlayColor: yellow.yellow6,
+    titleColor: '#000',
   },
   {
     key: 'context-menu',
@@ -38,5 +41,6 @@ export const features: Feature[] = [
     path: getPath('context-menu'),
     backgroundColor: green.green6,
     overlayColor: cyan.cyan6,
+    titleColor: '#000',
   },
 ];

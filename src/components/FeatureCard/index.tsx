@@ -65,7 +65,7 @@ const FeatureCard: FC<Props> = ({
   const navigate = useNavigate();
 
   const onClick = useCallback(() => {
-    navigate(path || '/');
+    navigate(path || '#');
   }, []);
 
   return (
