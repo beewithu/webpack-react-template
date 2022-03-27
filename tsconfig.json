@@ -23,7 +23,8 @@
       "store/*": ["store/*"],
       "pages/*": ["pages/*"],
       "layouts/*": ["layouts/*"],
-      "hooks/*": ["hooks/*"]
+      "hooks/*": ["hooks/*"],
+      "assets/*": ["assets/*"]
     }
   },
   "include": ["src", "src/custom.d.ts"]
