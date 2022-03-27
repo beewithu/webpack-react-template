@@ -55,7 +55,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|webp)$/,
         type: 'asset',
         parser: { dataUrlCondition: { maxSize: 10000 } },
       },

@@ -1,5 +1,5 @@
 import { blue, cyan, green, purple, yellow } from '@radix-ui/colors';
-import TestImage from 'assets/images/feature-card-placeholder.png';
+import TestImage from 'assets/images/feature-card-placeholder.webp';
 
 export type Feature = {
   key: string;
