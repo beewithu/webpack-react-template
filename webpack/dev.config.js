@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge');
 
 module.exports = merge(common, {
   mode: 'development',
+  devtool: 'cheap-module-source-map',
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
@@ -11,15 +12,9 @@ module.exports = merge(common, {
   },
   devServer: {
     compress: true,
-    host: '0.0.0.0',
     port: 8080,
     hot: true,
-    client: {
-      overlay: {
-        errors: true,
-        warnings: false,
-      },
-    },
+    open: true,
     historyApiFallback: true,
   },
 });

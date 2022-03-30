@@ -12,6 +12,7 @@ module.exports = {
     filename: isProduction ? 'js/[name].[contenthash:8].js' : 'js/[name].bundle.js',
     publicPath: '/',
     chunkFilename: 'js/[name].chunk.js',
+    assetModuleFilename: 'static/[hash][ext][query]'
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -52,6 +53,11 @@ module.exports = {
             loader: 'ts-loader',
           },
         ],
+      },
+      {
+        test: /\.(png|jpg|webp)$/,
+        type: 'asset',
+        parser: { dataUrlCondition: { maxSize: 10000 } },
       },
     ],
   },
