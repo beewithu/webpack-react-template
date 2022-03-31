@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { render } from 'react-dom';
+import { hydrate, render } from 'react-dom';
 import { hot } from 'react-hot-loader/root';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -11,13 +11,27 @@ const HotModuleApp = hot(App);
 
 globalStyles();
 
-render(
-  <StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <HotModuleApp />
-      </BrowserRouter>
-    </Provider>
-  </StrictMode>,
-  document.getElementById('root'),
-);
+const rootElement = document.getElementById('root');
+if (rootElement && rootElement.hasChildNodes()) {
+  hydrate(
+    <StrictMode>
+      <Provider store={store}>
+        <BrowserRouter>
+          <HotModuleApp />
+        </BrowserRouter>
+      </Provider>
+    </StrictMode>,
+    rootElement,
+  );
+} else {
+  render(
+    <StrictMode>
+      <Provider store={store}>
+        <BrowserRouter>
+          <HotModuleApp />
+        </BrowserRouter>
+      </Provider>
+    </StrictMode>,
+    rootElement,
+  );
+}

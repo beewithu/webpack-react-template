@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const aliases = require('./aliases');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -12,7 +13,7 @@ module.exports = {
     filename: isProduction ? 'js/[name].[contenthash:8].js' : 'js/[name].bundle.js',
     publicPath: '/',
     chunkFilename: 'js/[name].chunk.js',
-    assetModuleFilename: 'static/[hash][ext][query]'
+    assetModuleFilename: 'static/[hash][ext][query]',
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -29,6 +30,7 @@ module.exports = {
         removeAttributeQuotes: true,
       },
     }),
+    new ForkTsCheckerWebpackPlugin(),
   ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -39,20 +41,15 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: path.resolve(__dirname, '../node_modules/'),
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-        ],
+        loader: 'babel-loader',
       },
       {
         test: /\.(ts|tsx)?$/,
         exclude: path.resolve(__dirname, '../node_modules/'),
-        use: [
-          {
-            loader: 'ts-loader',
-          },
-        ],
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true,
+        },
       },
       {
         test: /\.(png|jpg|webp)$/,
