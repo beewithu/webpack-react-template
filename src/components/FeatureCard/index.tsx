@@ -1,12 +1,12 @@
 import Text from 'components/Text';
 import { styled } from 'custom-stitches';
-import { FC, ReactElement, useCallback } from 'react';
+import { FC, ReactElement } from 'react';
 import { StarFilledIcon, StarIcon } from '@radix-ui/react-icons';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface Props {
   title: string;
-  path?: string;
+  path: string;
   isStar?: boolean;
   imgSrc?: string;
   backgroundColor?: string;
@@ -51,6 +51,12 @@ const Overlay = styled('div', {
   background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 81.25%)',
 });
 
+const UnstyledLink = styled(Link, {
+  color: 'inherit',
+  textDecoration: 'inherit',
+  cursor: 'inherit',
+});
+
 const FeatureCard: FC<Props> = ({
   title,
   path,
@@ -62,40 +68,35 @@ const FeatureCard: FC<Props> = ({
   width,
   height,
 }: Props): ReactElement => {
-  const navigate = useNavigate();
-
-  const onClick = useCallback(() => {
-    navigate(path || '#');
-  }, []);
-
   return (
-    <Container
-      css={{
-        backgroundColor,
-        color: titleColor,
-        backgroundImage: `url(${imgSrc})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        width,
-        height,
-      }}
-      onClick={onClick}
-    >
-      <Overlay
+    <UnstyledLink to={path}>
+      <Container
         css={{
-          background: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, ${overlayColor} 81.25%)`,
+          backgroundColor,
+          color: titleColor,
+          backgroundImage: `url(${imgSrc})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          width,
+          height,
         }}
-      />
-      <Title>
-        <Text
-          variant="heading"
-          css={{ color: titleColor, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
-        >
-          {title}
-        </Text>
-        {isStar ? <StarFilledIcon /> : <StarIcon />}
-      </Title>
-    </Container>
+      >
+        <Overlay
+          css={{
+            background: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, ${overlayColor} 81.25%)`,
+          }}
+        />
+        <Title>
+          <Text
+            variant="heading"
+            css={{ color: titleColor, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
+          >
+            {title}
+          </Text>
+          {isStar ? <StarFilledIcon /> : <StarIcon />}
+        </Title>
+      </Container>
+    </UnstyledLink>
   );
 };
 

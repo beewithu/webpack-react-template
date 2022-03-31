@@ -33,6 +33,7 @@ const FeatureCard: FC = (): ReactElement => {
           backgroundColor={backgroundColor}
           overlayColor={overlayColor}
           titleColor={titleColor}
+          path="#"
         />
       </Container>
       <FeatureCardController

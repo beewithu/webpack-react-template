@@ -4,7 +4,7 @@ import TestImage from 'assets/images/feature-card-placeholder.webp';
 export type Feature = {
   key: string;
   name: string;
-  path?: string;
+  path: string;
   imgSrc?: string;
   isStar?: boolean;
   backgroundColor?: string;
