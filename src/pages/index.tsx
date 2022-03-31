@@ -1,8 +1,9 @@
-import { FC, lazy, ReactElement, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { FC, ReactElement, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import preRenderedLoadable from 'pages/prerenderedLoadable';
 
-const Home = lazy(() => import('./Home'));
-const FeatureCard = lazy(() => import('./FeatureCard'));
+const Home = preRenderedLoadable(() => import('./Home'));
+const FeatureCard = preRenderedLoadable(() => import('./FeatureCard'));
 
 const AppRoutes: FC = (): ReactElement => {
   return (

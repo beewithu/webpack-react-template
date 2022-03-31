@@ -18,6 +18,7 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       React: 'react',
+      process: 'process/browser',
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
@@ -35,6 +36,10 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: aliases,
+    fallback: {
+      stream: require.resolve('stream-browserify'),
+      buffer: require.resolve('buffer/'),
+    },
   },
   module: {
     rules: [
@@ -46,10 +51,15 @@ module.exports = {
       {
         test: /\.(ts|tsx)?$/,
         exclude: path.resolve(__dirname, '../node_modules/'),
-        loader: 'ts-loader',
-        options: {
-          transpileOnly: true,
-        },
+        use: [
+          'babel-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|webp)$/,
