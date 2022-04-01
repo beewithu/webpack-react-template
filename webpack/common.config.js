@@ -18,7 +18,6 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       React: 'react',
-      process: 'process/browser',
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
@@ -36,10 +35,6 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: aliases,
-    fallback: {
-      stream: require.resolve('stream-browserify'),
-      buffer: require.resolve('buffer/'),
-    },
   },
   module: {
     rules: [
