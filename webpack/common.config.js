@@ -39,22 +39,37 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js)$/,
         exclude: path.resolve(__dirname, '../node_modules/'),
-        loader: 'babel-loader',
+        loader: 'esbuild-loader',
+        options: {
+          target: 'es2015',
+        },
       },
       {
-        test: /\.(ts|tsx)?$/,
+        test: /\.(jsx)$/,
         exclude: path.resolve(__dirname, '../node_modules/'),
-        use: [
-          'babel-loader',
-          {
-            loader: 'ts-loader',
-            options: {
-              transpileOnly: true,
-            },
-          },
-        ],
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'jsx', // Remove this if you're not using JSX
+          target: 'es2015',
+        },
+      },
+      {
+        test: /\.ts?$/,
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'ts',
+          target: 'es2015',
+        },
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'tsx',
+          target: 'es2015',
+        },
       },
       {
         test: /\.(png|jpg|webp)$/,
