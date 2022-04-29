@@ -1,4 +1,4 @@
-import { styled } from 'custom-stitches';
+import { styled } from 'stitches';
 
 const Input = styled('input', {
   backgroundColor: '$gray2',

@@ -1,10 +1,9 @@
-import { styled } from 'custom-stitches';
-import { FC, ReactElement } from 'react';
-import { SketchPicker } from 'react-color';
 import Checkbox from 'components/Checkbox';
 import ColorPicker from 'components/ColorPicker';
 import Input from 'components/Input';
 import Text from 'components/Text';
+import { FC, ReactElement } from 'react';
+import { styled } from 'stitches';
 
 const Controller = styled('div', {
   gridArea: 'controller',

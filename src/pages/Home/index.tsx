@@ -1,6 +1,6 @@
 import FeatureCard from 'components/FeatureCard';
 import Text from 'components/Text';
-import { styled } from 'custom-stitches';
+import { styled } from 'stitches';
 import MainLayout from 'layouts/Main';
 import { FC, ReactElement } from 'react';
 import { features } from './helpers';
