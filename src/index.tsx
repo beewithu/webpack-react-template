@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { hot } from 'react-hot-loader/root';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import { globalStyles } from './custom-stitches';
 import store from './store';
@@ -15,11 +14,9 @@ globalStyles();
 render(
   <StrictMode>
     <Provider store={store}>
-      <HelmetProvider>
-        <BrowserRouter>
-          <HotModuleApp />
-        </BrowserRouter>
-      </HelmetProvider>
+      <BrowserRouter>
+        <HotModuleApp />
+      </BrowserRouter>
     </Provider>
   </StrictMode>,
   document.getElementById('root'),
