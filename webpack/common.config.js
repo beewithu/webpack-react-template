@@ -41,20 +41,12 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: path.resolve(__dirname, '../node_modules/'),
-        loader: 'babel-loader',
+        loader: 'swc-loader',
       },
       {
         test: /\.(ts|tsx)?$/,
         exclude: path.resolve(__dirname, '../node_modules/'),
-        use: [
-          'babel-loader',
-          {
-            loader: 'ts-loader',
-            options: {
-              transpileOnly: true,
-            },
-          },
-        ],
+        loader: 'swc-loader',
       },
       {
         test: /\.(png|jpg|webp)$/,
