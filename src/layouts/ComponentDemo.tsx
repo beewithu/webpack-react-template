@@ -1,3 +1,5 @@
+import { FC, ReactElement } from 'react';
+import { Outlet } from 'react-router-dom';
 import { styled } from 'stitches';
 
 const ComponentDemo = styled('main', {
@@ -9,4 +11,12 @@ const ComponentDemo = styled('main', {
   position: 'relative',
 });
 
-export default ComponentDemo;
+const ComponentDemoLayout: FC = (): ReactElement => {
+  return (
+    <ComponentDemo>
+      <Outlet />
+    </ComponentDemo>
+  );
+};
+
+export default ComponentDemoLayout;

@@ -1,9 +1,8 @@
 import { blue } from '@radix-ui/colors';
 import BackButton from 'components/BackButton';
 import FeatureCardComponent from 'components/FeatureCard';
-import { styled } from 'stitches';
-import ComponentDemoLayout from 'layouts/ComponentDemo';
 import { FC, ReactElement, useState } from 'react';
+import { styled } from 'stitches';
 import FeatureCardController from './components/Controller';
 
 const Container = styled('div', {
@@ -23,7 +22,7 @@ const FeatureCard: FC = (): ReactElement => {
   const [titleColor, setTitleColor] = useState<string>('#000');
 
   return (
-    <ComponentDemoLayout>
+    <>
       <BackButton label="Home" path="/" />
       <Container>
         <FeatureCardComponent
@@ -50,7 +49,7 @@ const FeatureCard: FC = (): ReactElement => {
         titleColor={titleColor}
         onTitleColorChange={setTitleColor}
       />
-    </ComponentDemoLayout>
+    </>
   );
 };
 
