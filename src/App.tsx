@@ -1,8 +1,8 @@
-import AppRoutes from 'pages';
+import Pages from 'pages';
 import { FC, ReactElement } from 'react';
 
 const App: FC = (): ReactElement => {
-  return <AppRoutes />;
+  return <Pages />;
 };
 
 export default App;

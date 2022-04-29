@@ -1,8 +1,7 @@
 import FeatureCard from 'components/FeatureCard';
 import Text from 'components/Text';
-import { styled } from 'stitches';
-import MainLayout from 'layouts/Main';
 import { FC, ReactElement } from 'react';
+import { styled } from 'stitches';
 import { features } from './helpers';
 
 const Container = styled('div', {
@@ -14,7 +13,7 @@ const Container = styled('div', {
 
 const Home: FC = (): ReactElement => {
   return (
-    <MainLayout>
+    <>
       <Text
         css={{
           textAlign: 'center',
@@ -37,7 +36,7 @@ const Home: FC = (): ReactElement => {
           />
         ))}
       </Container>
-    </MainLayout>
+    </>
   );
 };
 
