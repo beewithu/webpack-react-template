@@ -1,5 +1,4 @@
 import { blue, cyan, green, purple, yellow } from '@radix-ui/colors';
-import TestImage from 'assets/images/feature-card-placeholder.webp';
 
 export type Feature = {
   key: string;
@@ -24,7 +23,6 @@ export const features: Feature[] = [
     name: 'Feature Card',
     path: getPath('feature-card'),
     isStar: true,
-    imgSrc: TestImage,
     overlayColor: blue.blue4,
     titleColor: '#000',
   },
