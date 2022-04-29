@@ -39,12 +39,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: path.resolve(__dirname, '../node_modules/'),
-        loader: 'swc-loader',
-      },
-      {
-        test: /\.(ts|tsx)?$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: path.resolve(__dirname, '../node_modules/'),
         loader: 'swc-loader',
       },

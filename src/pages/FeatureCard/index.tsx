@@ -1,7 +1,7 @@
 import { blue } from '@radix-ui/colors';
 import BackButton from 'components/BackButton';
 import FeatureCardComponent from 'components/FeatureCard';
-import { styled } from 'custom-stitches';
+import { styled } from 'stitches';
 import ComponentDemoLayout from 'layouts/ComponentDemo';
 import { FC, ReactElement, useState } from 'react';
 import FeatureCardController from './components/Controller';

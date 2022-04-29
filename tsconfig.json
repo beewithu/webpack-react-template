@@ -19,7 +19,7 @@
     "baseUrl": "src",
     "paths": {
       "components/*": ["components/*"],
-      "custom-stitches/*": ["custom-stitches/*"],
+      "stitches/*": ["stitches/*"],
       "store/*": ["store/*"],
       "pages/*": ["pages/*"],
       "layouts/*": ["layouts/*"],

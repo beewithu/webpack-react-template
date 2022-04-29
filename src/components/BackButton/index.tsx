@@ -1,6 +1,6 @@
 import { ChevronLeftIcon } from '@radix-ui/react-icons';
 import Text from 'components/Text';
-import { styled } from 'custom-stitches';
+import { styled } from 'stitches';
 import { FC, ReactElement } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 

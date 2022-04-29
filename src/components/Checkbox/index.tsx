@@ -1,4 +1,4 @@
-import { styled } from 'custom-stitches';
+import { styled } from 'stitches';
 
 const Checkbox = styled('input', {
   width: 20,

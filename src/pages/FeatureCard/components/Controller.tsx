@@ -1,4 +1,4 @@
-import { styled } from 'custom-stitches';
+import { styled } from 'stitches';
 import { FC, ReactElement } from 'react';
 import { SketchPicker } from 'react-color';
 import Checkbox from 'components/Checkbox';

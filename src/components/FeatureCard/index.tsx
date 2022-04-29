@@ -1,5 +1,5 @@
 import Text from 'components/Text';
-import { styled } from 'custom-stitches';
+import { styled } from 'stitches';
 import { FC, ReactElement } from 'react';
 import { StarFilledIcon, StarIcon } from '@radix-ui/react-icons';
 import { Link } from 'react-router-dom';
