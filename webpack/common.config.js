@@ -7,7 +7,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: ['react-hot-loader/patch', path.resolve(__dirname, '../src/index.tsx')],
+  entry: path.resolve(__dirname, '../src/index.tsx'),
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: isProduction ? 'js/[name].[contenthash:8].js' : 'js/[name].bundle.js',
